@@ -1,3 +1,12 @@
+<?php 
+session_start(); 
+
+if(!isset($_SESSION['login']))
+{}
+else header('Location:index.php');
+
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -27,6 +36,8 @@
             </article>
 
             <input type='submit' name='connexion' value='Connexion' />
+
+            <?php include 'include/traitement-connexion.php' ?>
 
         </form>
 

@@ -1,3 +1,11 @@
+<?php 
+session_start(); 
+
+if(!isset($_SESSION['login']))
+{}
+else header('Location:index.php');
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -32,6 +40,8 @@
             </article>
 
             <input type="submit" name='inscription' value='Inscription' />
+
+            <?php include 'include/traitement-inscription.php' ?>
 
         </form>
 
