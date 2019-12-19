@@ -4,6 +4,8 @@ session_start();
 if(isset($_SESSION['login']))
 {}
 else header('Location:index.php');
+
+include 'include/traitement-profil.php'
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +28,7 @@ else header('Location:index.php');
 
             <article>
                 <label> Login </label>
-                <input type="text" name="login" />
+                <input type="text" name="login" value= <?php echo $resultat_data['login']; ?> />
             </article>
 
             <article>
@@ -45,6 +47,8 @@ else header('Location:index.php');
             </article>
 
             <input type="submit" name='profil' value='Modifier' />
+
+            <?php include 'include/affichage-profil.php' ?>
 
         </form>
 
