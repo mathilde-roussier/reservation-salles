@@ -2,8 +2,7 @@
 
 <?php
 
-if (isset($_POST['reservation'])) 
-{
+if (isset($_POST['reservation'])) {
     // Création des variables 
     $titre = $_POST['titre'];
     $description = $_POST['description'];
@@ -26,29 +25,35 @@ if (isset($_POST['reservation']))
 
     if (empty($resultat_verifevent)) 
     {
-        if ($_POST['datedebut'] == $_POST['datefin']) 
-        {
-            if ($duree == 100) 
+        if ($_POST['datedebut'] < date('Y-m-d H:i:s')) 
+        { ?>
+            <span>/!\ Ce créneau est passé !</span>
+            <?php } else 
             {
-                $insert_event = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUE ('$titre','$description','$date_debut','$date_fin','" . $_SESSION['id'] . "')";
-                $query_event = mysqli_query($connexion, $insert_event);
-                header('Location:planning.php');
-            } elseif ($duree < 100) 
+            if ($_POST['datedebut'] == $_POST['datefin']) 
+            {
+                if ($duree == 100) 
+                {
+                    $insert_event = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUE ('$titre','$description','$date_debut','$date_fin','" . $_SESSION['id'] . "')";
+                    $query_event = mysqli_query($connexion, $insert_event);
+                    header('Location:planning.php');
+                } elseif ($duree < 100) 
+                { ?>
+                    <span> /!\ Heure de fin inférieur à l'heure du début. </span>
+                <?php } else 
+                { ?>
+                    <span> /!\ Créneau de plus d'une heure ! </span>
+                <?php }
+            } elseif ($_POST['datefin'] < $_POST['datedebut']) 
             { ?>
-                <span> /!\ Heure de fin inférieur à l'heure du début. </span>
+                <span> /!\ Jour de fin inférieur au jour du début. </span>
             <?php } else 
             { ?>
-                <span> /!\ Créneau de plus d'une heure ! </span>
-            <?php }
-        } elseif ($_POST['datefin'] < $_POST['datedebut']) 
-        { ?>
-            <span> /!\ Jour de fin inférieur au jour du début. </span>
-        <?php } else 
-        { ?>
-            <span> /!\ Créneau de plus d'un jour ! </span>
+                <span> /!\ Créneau de plus d'un jour ! </span>
         <?php }
+        }
     } else 
     { ?>
         <span> Créneau non disponible ! </span>
-<?php } 
+<?php }
 } ?>
