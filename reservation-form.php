@@ -37,16 +37,18 @@ else header('Location:index.php');
             <article>
                 <label> Début </label>
                 <input type='date' name='datedebut' required />
-                <input type='time' name='timedebut' required />
+                <input type='time' name='timedebut' min='08:00' max='18:00' value='08:00' required />
             </article>
 
             <article>
                 <label> Fin </label>
                 <input type='date' name='datefin' required />
-                <input type='time' name='timefin' required />
+                <input type='time' name='timefin' min='09:00' max='19:00' value='09:00' required />
             </article>
 
             <input type="submit" name='reservation' value='Réserver' />
+
+            <?php include 'include/traitement-reservation.php' ?>
 
         </form>
 
