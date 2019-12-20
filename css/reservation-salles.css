@@ -1,0 +1,33 @@
+html {
+    display: flex;
+    flex-direction: column;
+    background-image: url('../img/html.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    height: 200vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+nav,footer{
+    background-image:url('../img/header.png');
+    background-color:black;
+}
+
+nav ul {
+    margin:0;
+}
