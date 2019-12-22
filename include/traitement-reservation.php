@@ -4,8 +4,8 @@
 
 if (isset($_POST['reservation'])) {
     // Création des variables 
-    $titre = $_POST['titre'];
-    $description = $_POST['description'];
+    $titre = addslashes($_POST['titre']);
+    $description = addslashes($_POST['description']);
     $date_debut = $_POST['datedebut'] . " " . $_POST['timedebut'];
     $date_fin = $_POST['datefin'] . " " . $_POST['timefin'];
 
