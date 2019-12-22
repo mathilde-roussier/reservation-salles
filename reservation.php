@@ -1,9 +1,10 @@
-<?php 
-session_start(); 
+<?php
+session_start();
 
-if(isset($_SESSION['login']))
-{}
-else header('Location:index.php');
+if (isset($_SESSION['login'])) {
+} else header('Location:index.php');
+
+include 'include/traitement-reservation.php';
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +22,30 @@ else header('Location:index.php');
     <?php include 'include/header.php' ?>
 
     <main>
+
+        <section>
+
+            <article>
+                <p> Créé par : <?php echo $event['login']; ?> </p>
+            </article>
+
+            <article>
+                <p> Titre : <?php echo $event['titre']; ?> </p>
+            </article>
+
+            <article>
+                <p> Description : <?php echo $event['description']; ?> </p>
+            </article>
+
+            <article>
+                <p> Du <?php echo $event['debut']; ?> </p>
+            </article>
+
+            <article>
+                <p> Au <?php echo $event['fin']; ?> </p>
+            </article>
+
+        </section>
 
     </main>
 

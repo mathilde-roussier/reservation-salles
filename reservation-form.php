@@ -48,7 +48,7 @@ else header('Location:index.php');
 
             <input type="submit" name='reservation' value='Réserver' />
 
-            <?php include 'include/traitement-reservation.php' ?>
+            <?php include 'include/traitement-reservation-form.php' ?>
 
         </form>
 
