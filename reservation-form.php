@@ -1,9 +1,8 @@
-<?php 
-session_start(); 
+<?php
+session_start();
 
-if(isset($_SESSION['login']))
-{}
-else header('Location:index.php');
+if (isset($_SESSION['login'])) {
+} else header('Location:index.php');
 ?>
 
 <!DOCTYPE html>
@@ -20,9 +19,9 @@ else header('Location:index.php');
 
     <?php include 'include/header.php' ?>
 
-    <main>
+    <main id='main'>
 
-        <form method='POST' action='reservation-form.php'>
+        <form method='POST' action='reservation-form.php#main'>
 
             <article>
                 <label> Titre </label>
@@ -36,14 +35,18 @@ else header('Location:index.php');
 
             <article>
                 <label> Début </label>
-                <input type='date' name='datedebut' required />
-                <input type='time' name='timedebut' min='08:00' max='18:00' value='08:00' required />
+                <div>
+                    <input type='date' name='datedebut' required />
+                    <input type='time' name='timedebut' min='08:00' max='18:00' value='08:00' required />
+                </div>
             </article>
 
             <article>
                 <label> Fin </label>
-                <input type='date' name='datefin' required />
-                <input type='time' name='timefin' min='09:00' max='19:00' value='09:00' required />
+                <div>
+                    <input type='date' name='datefin' required />
+                    <input type='time' name='timefin' min='09:00' max='19:00' value='09:00' required />
+                </div>
             </article>
 
             <input type="submit" name='reservation' value='Réserver' />

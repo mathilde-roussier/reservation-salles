@@ -19,12 +19,12 @@
         <table>
             <thead>
                 <tr>
-                    <th></th>
-                    <th> Lundi </th>
-                    <th> Mardi </th>
-                    <th> Mercredi </th>
-                    <th> Jeudi </th>
-                    <th> Vendredi </th>
+                    <th class='jours'></th>
+                    <th class='jours'> Lundi </th>
+                    <th class='jours'> Mardi </th>
+                    <th class='jours'> Mercredi </th>
+                    <th class='jours'> Jeudi </th>
+                    <th class='jours'> Vendredi </th>
                 </tr>
             </thead>
             <tbody>
