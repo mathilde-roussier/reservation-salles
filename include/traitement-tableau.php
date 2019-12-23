@@ -8,12 +8,12 @@ $resultat_event = mysqli_query($connexion, $check_event);
 // $creneaupris = false;
 
 for ($h = 8; $h <= 18; $h++) {
-    echo "<tr><td>" . $h . "</td>";
+    echo "<tr><td class='heures'>" . $h . "</td>";
 
     for ($j = 1; $j <= 5; $j++) {
         $creneau = $j . $h;
 
-        echo "<td>";
+        echo "<td class='creneaux' >";
 
         if (isset($resultat_event)) {
             foreach ($resultat_event as $donnees) {
@@ -39,13 +39,13 @@ for ($h = 8; $h <= 18; $h++) {
                 $id = $donnees['id'];
 ?>
                 <a href='reservation.php?id=<?php echo $id ?> '>
-                    <div>
+                    <div class='event'>
                         <?php echo $donnees['login'] ?> <br />
                         <?php echo $donnees['titre'] ?>
                     </div>
                 </a>
             <?php } else { ?> <a href='reservation-form.php'>
-                    <article>
+                    <article class='dispo'>
                         Disponible
                     </article>
                 </a>
@@ -53,7 +53,7 @@ for ($h = 8; $h <= 18; $h++) {
         } else {
             ?>
             <a href='reservation-form.php'>
-                <article>
+                <article class='dispo'>
                     Disponible
                 </article>
             </a>

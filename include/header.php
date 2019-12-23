@@ -2,6 +2,11 @@
 
 <header>
 
+<aside>
+    <img src="img/stress.png"/>
+    <h1> CASSE-COU : <br> Viens te défouler ! </h1>
+</aside>
+
     <nav>
 
         <ul>
