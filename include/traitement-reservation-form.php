@@ -36,7 +36,7 @@ if (isset($_POST['reservation'])) {
                 {
                     $insert_event = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUE ('$titre','$description','$date_debut','$date_fin','" . $_SESSION['id'] . "')";
                     $query_event = mysqli_query($connexion, $insert_event);
-                    header('Location:planning.php');
+                    header('Location:planning.php#vu');
                 } elseif ($duree < 100) 
                 { ?>
                     <span> /!\ Heure de fin inférieur à l'heure du début. </span>

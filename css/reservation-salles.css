@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Megrim&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Hanalei+Fill&display=swap');
-
 html {
     display: flex;
     flex-direction: column;
@@ -21,40 +20,41 @@ body {
 }
 
 a {
-    text-decoration:none;
-    color:black;
+    text-decoration: none;
+    color: black;
 }
+
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    color:white;
+    justify-content: space-around;
+    color: white;
     flex-grow: 1;
 }
 
 /* Header & footer */
 
-header,footer{
-    background-image:url('../img/header.png');
-    background-color:rgba(194, 58, 58, 0.6);
+header, footer {
+    background-image: url('../img/header.png');
+    background-color: rgba(194, 58, 58, 0.6);
     backdrop-filter: blur(3px);
 }
 
-header aside{
+header aside {
     font-family: 'Hanalei Fill', cursive;
-    font-size:40px;
-    text-align:center;
+    font-size: 40px;
+    text-align: center;
 }
 
 nav ul {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     font-family: 'Hanalei Fill', cursive;
-    font-size:30px;
-    font-weight:bold;
+    font-size: 30px;
+    font-weight: bold;
     letter-spacing: 2px;
     list-style: none;
 }
@@ -63,20 +63,52 @@ footer nav ul {
     flex-direction: column;
 }
 
-footer aside{
+footer aside {
     font-family: 'Hanalei Fill', cursive;
     font-size: 30px;
 }
 
-footer{
-    display:flex;
-    flex-direction:row;
-    align-items:center;
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-around;
 }
 
-header a:hover,footer a:hover{
-    color:rgb(255, 255, 255);
+header a:hover, footer a:hover {
+    color: rgb(255, 255, 255);
+}
+
+/* Accueil */
+
+.intro{
+    display:flex;
+    flex-direction:column;
+    flex-grow:0.3;
+    width:45%;
+    align-self:center;
+    justify-content: space-around;
+    align-items:center;
+    text-align:center;
+    backdrop-filter: blur(5px);
+    border: thick double rgb(194, 58, 58);
+    background-color:rgba(167, 119, 119, 0.8);
+    font-family: 'Hanalei Fill', cursive;
+    font-size:40px;
+    color:black;
+}
+
+main figure{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+main img {
+    width:500px;
+    height:300px;
+    border:solid 10px rgb(194, 58, 58);
+
 }
 
 /* formulaire */
@@ -91,26 +123,32 @@ form {
     align-items: center;
     padding: 10px;
     border: thick double rgb(194, 58, 58);
-    border-radius:20px;
+    border-radius: 20px;
     font-family: 'Megrim', cursive;
     font-size: 25px;
     font-weight: bold;
-    color: rgb(194, 58, 58);
-    background: rgba(65, 33, 33, 0.8);
+    color: rgb(102, 9, 9);
+    background: rgba(167, 119, 119, 0.8);
     backdrop-filter: blur(5px);
 }
 
-form article{
-    display:flex;
+form article {
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
-    flex-grow:0.1;
-    align-items:center;
+    flex-grow: 0.1;
+    align-items: center;
 }
 
-form article div{
-    display:flex;
+form article div {
+    display: flex;
     flex-direction: row;
+}
+
+form aside {
+    display: flex;
+    text-align: center;
+    color:rgb(216, 164, 164);
 }
 
 /* input */
@@ -119,10 +157,10 @@ input:not([type=submit]) {
     font-family: 'Megrim', cursive;
     width: 300px;
     height: 50px;
-    border-color:rgb(194, 58, 58);
+    border-color: rgb(194, 58, 58);
     background: rgb(255, 255, 255, 0.5);
-    text-align: center;
     border-radius: 15% 15% 60% 60%;
+    text-align: center;
     font-weight: bold;
     font-size: 25px;
 }
@@ -130,7 +168,7 @@ input:not([type=submit]) {
 textarea {
     width: 500px;
     height: 50px;
-    border-color:rgb(194, 58, 58);
+    border-color: rgb(194, 58, 58);
     border-radius: 15% 15% 60% 60%;
     background-color: rgb(255, 255, 255, 0.5);
     font-family: 'Megrim', cursive;
@@ -141,75 +179,119 @@ textarea {
 
 input[type=submit] {
     font-family: 'Megrim', cursive;
-    font-weight:bold;
+    font-weight: bold;
     border-color: rgb(194, 58, 58);
     background-color: rgb(194, 58, 58);
     font-size: 18pt;
     border-width: 10px;
-    border-radius:20% ;
+    border-radius: 20%;
     cursor: pointer;
     outline: none;
 }
 
 input:not([type=submit]):focus, textarea:focus {
-    background-color: rgba(194, 58, 58,0.5);
+    background-color: rgba(194, 58, 58, 0.5);
 }
 
 /* Planning */
 
-table{
+table {
     border-collapse: collapse;
     backdrop-filter: blur(3px);
-	background:rgba(253, 254, 254,0.8);
-	margin-bottom:20px;
-	text-align:center;
-	border:4px solid rgba(253, 254, 254,0.2);
+    background: rgba(253, 254, 254, 0.8);
+    margin-bottom: 20px;
+    text-align: center;
+    border: 4px solid rgba(253, 254, 254, 0.2);
 }
 
-.event{
-    background-color:rgba(194, 58, 58, 0.6);
-	border-radius:20px;
+.event {
+    background-color: rgba(194, 58, 58, 0.6);
+    border-radius: 20px;
     font-family: 'Megrim', cursive;
-    font-weight:bold;
+    font-weight: bold;
 }
 
-.event:hover{
-	transform: scale(1.05);
-    background-color:rgba(194, 58, 58);
+.event:hover {
+    transform: scale(1.05);
+    background-color: rgba(194, 58, 58);
 }
 
-.dispo{
-    /* background-color:rgba(114, 100, 100, 0.6); */
-	border-radius:20px;
+.dispo {
+    border-radius: 20px;
     font-family: 'Megrim', cursive;
-    font-weight:bold;
+    font-weight: bold;
 }
 
-.dispo:hover{
-	/* transform: scale(1.05); */
-    background-color:rgba(114, 100, 100);
+.dispo:hover {
+    background-color: rgba(114, 100, 100);
 }
 
-.creneaux{
-	border:1px solid rgb(15, 15, 15);
-	width:380px;
-    height:70px;
-    font-size:15pt;
+.creneaux {
+    border: 1px solid rgb(15, 15, 15);
+    width: 380px;
+    height: 70px;
+    font-size: 15pt;
 }
 
-.jours{
-	font-size:20pt;
+.jours {
+    font-size: 20pt;
     font-family: 'Megrim', cursive;
-    letter-spacing:2px;
-    background:black;
+    letter-spacing: 2px;
+    background: black;
 }
 
-.semaine{
-	background:rgba(142, 68, 173,0.7);
+.semaine {
+    background: rgba(142, 68, 173, 0.7);
 }
 
-.heures{
-	font-size:15pt;
+.heures {
+    font-size: 15pt;
     font-family: 'Megrim', cursive;
-    background:black;
+    background: black;
+}
+
+/* Réservation */
+
+.reservation {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0.5;
+    width: 40%;
+    align-self: center;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(167, 119, 119, 0.8);
+    backdrop-filter: blur(5px);
+    border: thick double rgb(194, 58, 58);
+    border-radius: 20px;
+    font-family: 'Megrim', cursive;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(102, 9, 9);
+}
+
+.reservation div {
+    color: black;
+}
+
+.reservation article {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+/* titres */
+
+main h1 {
+    display: flex;
+    width: 20%;
+    font-family: 'Hanalei Fill', cursive;
+    font-size: 50px;
+    color: rgb(194, 58, 58);
+    background-color: rgba(65, 33, 33, 0.8);
+    border-radius: 20px;
+    border: thick double rgb(194, 58, 58);
+    justify-content: center;
+    align-self: center;
+    letter-spacing: 2px;
 }

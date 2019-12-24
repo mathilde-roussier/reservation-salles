@@ -5,7 +5,7 @@ $connexion = mysqli_connect('localhost', 'root', '', 'reservationsalles');
 $check_event = "SELECT * FROM utilisateurs INNER JOIN reservations ON utilisateurs.id = reservations.id_utilisateur WHERE WEEK(reservations.debut) = WEEK(CURDATE()) ";
 $resultat_event = mysqli_query($connexion, $check_event);
 
-// $creneaupris = false;
+$creneaupris = false;
 
 for ($h = 8; $h <= 18; $h++) {
     echo "<tr><td class='heures'>" . $h . "</td>";
@@ -38,13 +38,13 @@ for ($h = 8; $h <= 18; $h++) {
             if ($creneaupris == true) {
                 $id = $donnees['id'];
 ?>
-                <a href='reservation.php?id=<?php echo $id ?> '>
+                <a href='reservation.php?id=<?php echo $id ?>#vu'>
                     <div class='event'>
                         <?php echo $donnees['login'] ?> <br />
                         <?php echo $donnees['titre'] ?>
                     </div>
                 </a>
-            <?php } else { ?> <a href='reservation-form.php'>
+            <?php } else { ?> <a href='reservation-form.php#vu'>
                     <article class='dispo'>
                         Disponible
                     </article>
@@ -52,7 +52,7 @@ for ($h = 8; $h <= 18; $h++) {
             <?php }
         } else {
             ?>
-            <a href='reservation-form.php'>
+            <a href='reservation-form.php#vu'>
                 <article class='dispo'>
                     Disponible
                 </article>

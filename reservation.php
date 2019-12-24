@@ -21,28 +21,35 @@ include 'include/traitement-reservation.php';
 
     <?php include 'include/header.php' ?>
 
-    <main>
+    <main >
 
-        <section>
+        <h1 id='vu'> Evènement </h1>
+
+        <section class='reservation'>
 
             <article>
-                <p> Créé par : <?php echo $event['login']; ?> </p>
+                <h3> Créé par : </h3>
+                <div><?php echo $event['login']; ?> </div>
             </article>
 
             <article>
-                <p> Titre : <?php echo $event['titre']; ?> </p>
+                <h3> Titre : </h3>
+                <div> <?php echo $event['titre']; ?> </div>
             </article>
 
             <article>
-                <p> Description : <?php echo $event['description']; ?> </p>
+                <h3> Description : </h3>
+                <div> <?php echo $event['description']; ?> </div>
             </article>
 
             <article>
-                <p> Du <?php echo $event['debut']; ?> </p>
+                <h3> Du </h3>
+                <div> <?php echo $event['debut']; ?> </div>
             </article>
 
             <article>
-                <p> Au <?php echo $event['fin']; ?> </p>
+                <h3> Au </h3>
+                <div> <?php echo $event['fin']; ?> </div>
             </article>
 
         </section>

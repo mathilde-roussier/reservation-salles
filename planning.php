@@ -14,7 +14,9 @@
 
     <?php include 'include/header.php' ?>
 
-    <main>
+    <main >
+
+        <h1 id='vu'> Planning </h1>
 
         <table>
             <thead>

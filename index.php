@@ -16,6 +16,17 @@
 
     <main>
 
+        <section class='intro' id='vu'>
+            <p> Vous êtes énervé ? Stressé ? En colère ? </p>
+            <p> Réservez une salle est démolissez tout à l'intérieur ! C'est fait pour, ne vous gênez pas !! </p>
+        </section>
+
+        <figure>
+            <img src='img/tele_break.jpg'>
+            <img src='img/ecran_break.jpg'>
+            <img src='img/piece_break.jpg'>
+        </figure>
+
     </main>
 
     <?php include 'include/footer.php' ?>

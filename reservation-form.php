@@ -19,9 +19,11 @@ if (isset($_SESSION['login'])) {
 
     <?php include 'include/header.php' ?>
 
-    <main id='main'>
+    <main >
 
-        <form method='POST' action='reservation-form.php#main'>
+        <h1 id='vu'> Réservation </h1>
+
+        <form method='POST' action='reservation-form.php#vu'>
 
             <article>
                 <label> Titre </label>
@@ -32,6 +34,8 @@ if (isset($_SESSION['login'])) {
                 <label> Description </label>
                 <textarea name='description'></textarea>
             </article>
+
+            <aside> Les créneaux disponibles sont des créneaux d'une heure uniquement.</aside>
 
             <article>
                 <label> Début </label>

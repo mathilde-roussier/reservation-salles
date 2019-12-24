@@ -1,9 +1,8 @@
-<?php 
-session_start(); 
+<?php
+session_start();
 
-if(isset($_SESSION['login']))
-{}
-else header('Location:index.php');
+if (isset($_SESSION['login'])) {
+} else header('Location:index.php');
 
 include 'include/traitement-profil.php'
 ?>
@@ -22,13 +21,15 @@ include 'include/traitement-profil.php'
 
     <?php include 'include/header.php' ?>
 
-    <main>
+    <main >
 
-        <form method='POST' action='profil.php'>
+        <h1 id='vu'> Profil </h1>
+
+        <form method='POST' action='profil.php#vu'>
 
             <article>
                 <label> Login </label>
-                <input type="text" name="login" value= <?php echo $resultat_data['login']; ?> />
+                <input type="text" name="login" value=<?php echo $resultat_data['login']; ?> />
             </article>
 
             <article>

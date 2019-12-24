@@ -1,9 +1,8 @@
-<?php 
-session_start(); 
+<?php
+session_start();
 
-if(!isset($_SESSION['login']))
-{}
-else header('Location:index.php');
+if (!isset($_SESSION['login'])) {
+} else header('Location:index.php');
 ?>
 
 <!DOCTYPE html>
@@ -20,9 +19,11 @@ else header('Location:index.php');
 
     <?php include 'include/header.php' ?>
 
-    <main>
+    <main >
 
-        <form method='POST' action='inscription.php'>
+        <h1 id='vu'> Inscription </h1>
+
+        <form method='POST' action='inscription.php#vu'>
 
             <article>
                 <label> Login </label>
