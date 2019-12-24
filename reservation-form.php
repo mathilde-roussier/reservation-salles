@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['login'])) {
-} else header('Location:index.php');
+date_default_timezone_set('Europe/Paris');
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +10,7 @@ if (isset($_SESSION['login'])) {
 
 <head>
     <meta charset="utf-8">
-    <title> Site de Mathilde </title>
+    <title> Réserver - Réservation salles </title>
     <link rel="stylesheet" href="css/reservation-salles.css">
 </head>
 
@@ -20,6 +19,8 @@ if (isset($_SESSION['login'])) {
     <?php include 'include/header.php' ?>
 
     <main >
+
+    <?php if (isset($_SESSION['login'])) { ?>
 
         <h1 id='vu'> Réservation </h1>
 
@@ -35,7 +36,7 @@ if (isset($_SESSION['login'])) {
                 <textarea name='description'></textarea>
             </article>
 
-            <aside> Les créneaux disponibles sont des créneaux d'une heure uniquement.</aside>
+            <aside> Les créneaux disponibles sont des créneaux d'une heure, du Lundi au Vendredi uniquement.</aside>
 
             <article>
                 <label> Début </label>
@@ -58,6 +59,14 @@ if (isset($_SESSION['login'])) {
             <?php include 'include/traitement-reservation-form.php' ?>
 
         </form>
+
+    <?php } else { ?>
+
+        <section id='vu' class='reservation'>
+            Veuillez vous connecter pour accéder à cette page !
+        </section>
+
+    <?php } ?>
 
     </main>
 

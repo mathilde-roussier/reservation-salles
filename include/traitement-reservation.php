@@ -7,6 +7,6 @@ $recup_event = "SELECT * FROM utilisateurs INNER JOIN reservations ON utilisateu
 $query_recup_event = mysqli_query($connexion, $recup_event);
 $event = mysqli_fetch_assoc($query_recup_event);
 
-// var_dump($event);
+//var_dump($event);
 
 ?>

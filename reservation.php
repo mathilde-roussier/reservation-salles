@@ -13,7 +13,7 @@ include 'include/traitement-reservation.php';
 
 <head>
     <meta charset="utf-8">
-    <title> Site de Mathilde </title>
+    <title> Réservation - Réservation salles </title>
     <link rel="stylesheet" href="css/reservation-salles.css">
 </head>
 
@@ -21,7 +21,7 @@ include 'include/traitement-reservation.php';
 
     <?php include 'include/header.php' ?>
 
-    <main >
+    <main>
 
         <h1 id='vu'> Evènement </h1>
 
@@ -56,7 +56,8 @@ include 'include/traitement-reservation.php';
 
     </main>
 
-    <?php include 'include/footer.php' ?>
+    <?php mysqli_close($connexion);
+    include 'include/footer.php' ?>
 
 </body>
 

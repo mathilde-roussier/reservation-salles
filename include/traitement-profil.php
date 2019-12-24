@@ -9,6 +9,7 @@ $resultat_data = mysqli_fetch_assoc($query_data);
 // var_dump($resultat_data);
 
 if (isset($_POST['profil'])) {
+
     // Création variables 
     $login = $_POST['login'];
     $old_password = $_POST['old_password'];
@@ -60,4 +61,5 @@ if (isset($_POST['profil'])) {
     {
         $erreur_oldpassword = true;
     }
+    mysqli_close($connexion);
 }

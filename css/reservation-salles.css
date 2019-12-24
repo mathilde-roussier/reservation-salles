@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Megrim&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Hanalei+Fill&display=swap');
+
 html {
     display: flex;
     flex-direction: column;
@@ -30,6 +31,10 @@ main {
     justify-content: space-around;
     color: white;
     flex-grow: 1;
+}
+
+.stop{
+    text-decoration: underline;
 }
 
 /* Header & footer */
@@ -241,8 +246,10 @@ table {
 }
 
 .semaine {
-    background: rgba(142, 68, 173, 0.7);
-}
+    font-size: 30pt;
+    font-family: 'Megrim', cursive;
+    letter-spacing: 2px;
+    background: black;}
 
 .heures {
     font-size: 15pt;

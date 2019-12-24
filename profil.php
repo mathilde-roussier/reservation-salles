@@ -13,7 +13,7 @@ include 'include/traitement-profil.php'
 
 <head>
     <meta charset="utf-8">
-    <title> Site de Mathilde </title>
+    <title> Profil - Réservation salles </title>
     <link rel="stylesheet" href="css/reservation-salles.css">
 </head>
 

@@ -3,6 +3,7 @@
 <?php
 
 if (isset($_POST['reservation'])) {
+
     // Création des variables 
     $titre = addslashes($_POST['titre']);
     $description = addslashes($_POST['description']);
@@ -23,37 +24,34 @@ if (isset($_POST['reservation'])) {
     $duree = $timefin_fini - $timedebut_fini;
     // echo $duree;
 
-    if (empty($resultat_verifevent)) 
-    {
-        if ($_POST['datedebut'] < date('Y-m-d H:i:s')) 
-        { ?>
+    // Evaluation jour de la semaine 
+    list($y, $m, $d) = explode('-', $_POST['datedebut']);
+    $check_jour = date('N', mktime(0, 0, 0, $m, $d, $y));
+
+    if (empty($resultat_verifevent)) {
+        if ($date_debut < date('Y-m-d H:i')) { ?>
             <span>/!\ Ce créneau est passé !</span>
-            <?php } else 
-            {
-            if ($_POST['datedebut'] == $_POST['datefin']) 
-            {
-                if ($duree == 100) 
-                {
+        <?php } elseif ($check_jour > 5) { ?>
+            <span> Désolé, nous sommes fermés le week-end ! </span>
+            <?php } else {
+            if ($_POST['datedebut'] == $_POST['datefin']) {
+                if ($duree == 100) {
                     $insert_event = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUE ('$titre','$description','$date_debut','$date_fin','" . $_SESSION['id'] . "')";
                     $query_event = mysqli_query($connexion, $insert_event);
                     header('Location:planning.php#vu');
-                } elseif ($duree < 100) 
-                { ?>
+                } elseif ($duree < 100) { ?>
                     <span> /!\ Heure de fin inférieur à l'heure du début. </span>
-                <?php } else 
-                { ?>
+                <?php } else { ?>
                     <span> /!\ Créneau de plus d'une heure ! </span>
                 <?php }
-            } elseif ($_POST['datefin'] < $_POST['datedebut']) 
-            { ?>
+            } elseif ($_POST['datefin'] < $_POST['datedebut']) { ?>
                 <span> /!\ Jour de fin inférieur au jour du début. </span>
-            <?php } else 
-            { ?>
+            <?php } else { ?>
                 <span> /!\ Créneau de plus d'un jour ! </span>
         <?php }
         }
-    } else 
-    { ?>
+    } else { ?>
         <span> Créneau non disponible ! </span>
 <?php }
+    mysqli_close($connexion);
 } ?>

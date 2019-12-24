@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> Site de Mathilde </title>
+    <title> Planning - Réservation salles </title>
     <link rel="stylesheet" href="css/reservation-salles.css">
 </head>
 
@@ -14,12 +14,15 @@
 
     <?php include 'include/header.php' ?>
 
-    <main >
+    <main>
 
         <h1 id='vu'> Planning </h1>
 
         <table>
             <thead>
+                <tr >
+                    <th colspan= '6' class='semaine'> - Semaine <?php echo date('W') ?> -</th>
+                </tr>
                 <tr>
                     <th class='jours'></th>
                     <th class='jours'> Lundi </th>

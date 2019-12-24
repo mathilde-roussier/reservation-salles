@@ -16,7 +16,7 @@ if (isset($_POST['connexion'])) {
             $_SESSION['login'] = $login;
             $_SESSION['password'] = $password;
             $_SESSION['id'] = $resultat_recupinscri['id'];
-            header('Location:index.php');
+            header('Location:planning.php#vu');
         } else { ?>
             <span> /!\ Erreur de mot de passe /!\ </span>
         <?php }

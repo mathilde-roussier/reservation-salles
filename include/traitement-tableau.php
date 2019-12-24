@@ -24,7 +24,7 @@ for ($h = 8; $h <= 18; $h++) {
                 // Jour
                 list($y, $m, $d) = explode('-', $date[0]);
                 $jour = date('N', mktime(0, 0, 0, $m, $d, $y));
-                // heure
+                // heures
                 list($he, $mi, $se) = explode(':', $date[1]);
                 $heure = date('G', mktime($he, $mi, $se, 0, 0, 0));
 
